@@ -11,11 +11,16 @@ html {
 
 body {
 	font-family: 'Roboto', sans-serif;
+	font
 }
 
 /* Navigation */
-.top-navagation {
+.top-navigation {
+	position: fixed;
+	width: 100%;
 	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	z-index: 9999;
 }
 
 .content {
@@ -62,7 +67,7 @@ body {
 	margin-left: 60px;
 }
 
-/* Header */
+/* Introduction */
 .introduction {
 	height: 45.938rem;
 	background-image: url("../images/background.jpg");
@@ -79,7 +84,7 @@ body {
 	font-weight: 300;
 }
 
-.introduction h1{
+.introduction h1 {
 	margin-top: 17.5rem;
 	font-size: 3.125rem;
 }
@@ -107,3 +112,35 @@ button:hover {
 	border-color: #CF3D0E;
 	cursor: pointer;
 }
+
+/* Three  Icon */
+
+.cases h2 {
+	margin-top: 8rem;
+	margin-bottom: 2rem;
+	font-size: 3.125rem;
+	font-weight: 300;
+}
+
+.cases h3 {
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+.cases .content {
+	text-align: center;
+}
+.flexbox {
+  	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  	display: -ms-flexbox;      /* TWEENER - IE 10 */
+  	display: -webkit-flex;     /* NEW - Chrome */
+  	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.devices li {
+	margin-right: 80px;
+	display: inline-block;
+	float: left;
+}
+
