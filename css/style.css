@@ -1,20 +1,51 @@
 
-html {
-	box-sizing: border-box;
+/*
+The CSS code gets to executed from top to bottom and left ro right
+
+*/
+
+
+/* CSS reset
+    (all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
+
+
+
+/* General styles
+    (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
 
 body {
 	font-family: 'Roboto', sans-serif;
-	font
 }
 
-/* Navigation */
+.content {
+	width: 60%;
+	margin: 0 auto;
+}
+
+/* Header styles
+    (all the styles inside the < header > or < nav > tags)
+*/
 .top-navigation {
 	position: fixed;
 	width: 100%;
@@ -22,60 +53,61 @@ body {
 	border-bottom: 1px solid #ddd;
 	z-index: 9999;
 }
-
-.content {
-	height: 70px;
-	width: 970px;
-	padding: 0 15px;
-	margin: 0 auto;
+.top-navigation .content {
+	height: 4.375rem;
+	padding: 0 0.938rem;
 }
 
-.links {
-	margin-top: 25px;
-	margin-right: 50px;
+.top-navigation .links {
+	margin-top: 1.5rem;
+	font-size: 1.05rem;
 	float: right;
 	-webkit-font-smoothing: antialiased;
 }
 
-.links li {
-	margin-left: 25px;
+.top-navigation .links li {
+	padding-left: 1.2rem;
 	display: inline-block;
 }
 
 
-.links li a{
+.top-navigation .links li a{
 	color: #838994;
-	font-family: 'Roboto', sans-serif;
 	font-size: 1.1em;
 	text-decoration: none;
 	letter-spacing: 0.03em;
 	transition: color 0.50s ease;
 }
 
-.links li a:hover{
+.top-navigation .links li a:hover{
 	color: #333;
 	cursor: pointer;
 }
 
-.links li a.active {
+.top-navigation .links li a.active {
     color: #4C5058;
     font-weight: 500;
 }
 
-.logo {
-	margin-top: 15px;
-	margin-left: 60px;
+.top-navigation .logo {
+	margin-top: 0.9rem;
 }
 
-/* Introduction */
+
+
+
+/* Content styles
+    (all the styles inside the < sections > or < aside > tags)
+*/
+
 .introduction {
-	height: 51rem;
+	height: 48rem;
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
 	overflow: hidden;
-	line-height: 25px;
+	line-height: 1rem;
 }
 
 .introduction h1,
@@ -83,8 +115,6 @@ body {
 	color: #fff;
 	text-align: center;
 	font-weight: 300;
-	
-
 }
 
 .introduction h1 {
@@ -97,10 +127,11 @@ body {
 	letter-spacing: 0.02em;
 }
 
-button {
+.introduction button {
 	display: block;
 	width: 9.688rem;
 	margin: 0 auto;
+	margin-top: 2rem;
 	padding: 1rem 1.5rem;
 	font-size: 1.2em;
 	color: #fff;
@@ -111,7 +142,7 @@ button {
     text-shadow: none;
 }
 
-button:hover {
+.introduction button:hover {
 	background-color: #D9400E; 
 	border-color: #CF3D0E;
 	cursor: pointer;
@@ -120,47 +151,64 @@ button:hover {
 /* Three  Icon */
 .cases {
 	overflow: hidden;
-    padding-bottom: 20rem;
+    padding-bottom: 8rem;
 }
 .cases h2 {
 	margin-top: 8rem;
-	margin-bottom: 2rem;
-	font-size: 3.125rem;
+	margin-bottom: 3rem;
+	font-size: 3.1rem;
 	font-weight: 300;
 }
 
 .cases h3 {
-	font-size: 1.5em;
+	margin-top: 2rem;
+	font-size: 1.7em;
 	font-weight: 400;
 }
 
 .cases .content {
 	text-align: center;
 }
-.flexbox {
+
+.cases .flexbox {
   	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   	display: -ms-flexbox;      /* TWEENER - IE 10 */
   	display: -webkit-flex;     /* NEW - Chrome */
   	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  	text-align: center;
 }
 
-.devices li {
-	margin-right: 80px;
+.cases .devices {
+	width: 100%;
+}
+
+.cases .devices li {
 	display: inline-block;
 	float: left;
+	width: 33%;
 }
+
+.cases img {
+	width: 9rem;
+}
+
+
+
+/* Footer styles
+    (all the styles inside the < footer > tag)
+*/
 
 .social {
 	overflow: auto;
-	padding-bottom: 9rem;
+	padding-bottom: 6rem;
 	text-align: center;
 }
 
 .social hr {
     border-width: 1px 0px 0px;
     border-style: solid none none;
-    border-color: #EAEBEC -moz-use-text-color -moz-use-text-color;
+    border-color: #EAEBEC;
     -moz-border-top-colors: none;
     -moz-border-right-colors: none;
     -moz-border-bottom-colors: none;
@@ -170,6 +218,7 @@ button:hover {
 }
 
 .social .icons {
+	margin: 1rem 0;
 	list-style: none;
 }
 
@@ -183,11 +232,108 @@ button:hover {
 	border-radius: 1.25rem;
 }
 
-.copyright {
-	margin-left: 2.5rem;
+.social .copyright {
 	font-size: 0.9rem;
 	font-weight: 300;
 	color: #838994;
 }
 
 
+/* Responsive styles
+    (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+*/
+
+
+/*ipad lanscape / small laptop*/
+
+@media only screen and (max-width: 1024px) {
+    /* acting like an IF statement, the media query is a set of conditions in which the containing css will be applied
+    for example the statament above says: IF the media on which this CSS is going to used is SCREEN (Mobiles, Tables, Laptops, Desktops or Projectors) and the maximum resolution of that device is 1024px, THEN apply the body color blue for all the text
+    */
+ /*   body {
+        color: blue;
+    }*/
+
+    .content {
+    	width: 99%;
+    }
+
+	.cases {
+		padding-bottom: 2rem;
+	}
+    .cases .devices li {
+    	display: block;
+    	width: 99%;
+    	padding-bottom: 4rem;
+	}
+	
+	.cases h2 {
+		margin-top: 5rem;
+	}
+	.cases h3 {
+		margin-top: .5rem;
+	}
+}
+
+
+/*ipad potrait*/
+
+@media only screen and (max-width: 768px) {
+ /*   body {
+        color: red;
+    }*/
+
+    .top-navigation {
+  		text-align: center;
+  	}
+
+    .cases h2 {
+    	font-size: 2.5rem;
+    }
+}
+
+
+/*iPhone landscape*/
+
+@media only screen and (max-width: 480px) {
+ /*   body {
+        color: green;
+    }
+*/
+    .top-navigation .links {
+    	margin-bottom: 1rem;
+    	margin-top: 0.8rem;
+    }
+		
+
+	.top-navigation .links li {
+		font-size: 1rem;
+		line-height: 2rem;
+	}
+
+    .introduction h1 {
+    	font-size: 2.5rem;
+    }
+
+    .introduction h3,
+    .cases h3 {
+    	font-size: 1.2rem;
+    }
+
+    .cases h2 {
+    	font-size: 2rem;
+    }
+	
+	.cases img {
+	width: 7rem;
+	}
+}
+
+
+/*iPhone portrait*/
+
+@media only screen and (max-width: 320px) {
+    body {
+        color: purple;
+    }
+}
