@@ -300,11 +300,15 @@ body {
         color: green;
     }
 */
+
+	.introduction {
+		height: 35rem;
+	}
+
     .top-navigation .links {
     	margin-bottom: 1rem;
     	margin-top: 0.8rem;
     }
-		
 
 	.top-navigation .links li {
 		font-size: 1rem;
